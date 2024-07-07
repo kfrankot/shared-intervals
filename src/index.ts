@@ -1,7 +1,9 @@
+/*global setInterval, clearInterval, NodeJS*/
+
 type BatchFn = (callback: () => unknown) => unknown
 
 class SharedInterval {
-  private intervalId: number
+  private intervalId: number | NodeJS.Timeout
   private callbacks: Map<number, () => unknown> = new Map()
 
   constructor(
@@ -66,7 +68,7 @@ export class SharedIntervalManager {
     }
   }
 
-  setBatchFn(batchFn: BatchFn): void {
+  setBatchFunction(batchFn: BatchFn): void {
     this.batchFn = batchFn
     for (let interval of this.intervals.values()) {
       interval.batchFn = batchFn
@@ -99,12 +101,10 @@ export class SharedIntervalManager {
 
 const sharedIntervalManagerGlobal = new SharedIntervalManager()
 
-export const setInterval = sharedIntervalManagerGlobal.setInterval.bind(
+export const setSharedInterval = sharedIntervalManagerGlobal.setInterval.bind(
   sharedIntervalManagerGlobal,
 )
-export const clearInterval = sharedIntervalManagerGlobal.clearInterval.bind(
-  sharedIntervalManagerGlobal,
-)
-export const setBatchFn = sharedIntervalManagerGlobal.setBatchFn.bind(
-  sharedIntervalManagerGlobal,
-)
+export const clearSharedInterval =
+  sharedIntervalManagerGlobal.clearInterval.bind(sharedIntervalManagerGlobal)
+export const setBatchFunction =
+  sharedIntervalManagerGlobal.setBatchFunction.bind(sharedIntervalManagerGlobal)
