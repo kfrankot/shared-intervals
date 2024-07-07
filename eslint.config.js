@@ -5,10 +5,23 @@ import prettier from 'eslint-config-prettier'
 import prettierPlugin from 'eslint-plugin-prettier'
 import jest from 'eslint-plugin-jest'
 
+const ignores = [
+  '**/node_modules/**',
+  '**/dist/**',
+  '**/build/**',
+  '**/coverage/**',
+  '**/.d.ts',
+  '**/__mocks__/**',
+  '**/*.{md,mdx}',
+]
+
 export default [
   // Base JavaScript configuration
   js.configs.recommended,
-
+  // Global ignore
+  {
+    ignores,
+  },
   // TypeScript configuration
   {
     files: ['**/*.ts', '**/*.tsx'],
@@ -30,6 +43,7 @@ export default [
         'error',
         { argsIgnorePattern: '^_' },
       ],
+      '@typescript-eslint/no-this-alias': ['error', { allowedNames: ['self'] }],
     },
   },
 
