@@ -20,7 +20,7 @@ export default [
     plugins: [
       // typescript(),
       license({
-        banner: license
+        banner: license,
       }),
       includePaths({
         paths: ['src'],
@@ -33,5 +33,5 @@ export default [
       }),
       terser(),
     ],
-  }
+  },
 ]

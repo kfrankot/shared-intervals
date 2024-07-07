@@ -6,7 +6,5 @@
     "outDir": "./dist",
     "sourceMap": false
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
