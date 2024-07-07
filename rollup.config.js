@@ -3,24 +3,25 @@ import includePaths from 'rollup-plugin-includepaths'
 import license from 'rollup-plugin-license'
 // TODO: Need to look into what the typescript rollup plugin does...
 // import typescript from '@rollup/plugin-typescript'
-import { terser } from 'rollup-plugin-terser'
+import terser from '@rollup/plugin-terser'
 
-const license = `
+const banner = `
 @preserve
 Kevin Frankot - shared-interval v<%= pkg.version %>
 `
 
 export default [
+  // Build is still messed up, there are no types
   {
     input: 'src/index.ts',
     output: {
-      file: 'dist',
+      file: 'dist/index.js',
       format: 'es',
     },
     plugins: [
       // typescript(),
       license({
-        banner: license,
+        banner,
       }),
       includePaths({
         paths: ['src'],

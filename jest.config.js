@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   preset: 'ts-jest/presets/js-with-babel',
   roots: ['<rootDir>/src'],
   transform: {
