@@ -12,6 +12,7 @@
   "scripts": {
     "test": "jest --runInBand",
     "test:watch": "npm run test -- --watch",
+    "test:coverage": "npm run test -- --coverage",
     "types:check": "tsc --project tsconfig.json",
     "format:check": "prettier \"**/*\" --check --ignore-unknown",
     "format:fix": "npm run format:check -- --write",
@@ -19,7 +20,8 @@
     "check": "npm run types:check && npm run format:check && npm run lint",
     "prebuild": "npm run check && npx rimraf -rf dist",
     "build": "tsc --project tsconfig.production.json && rollup --config",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run test:coverage"
   },
   "keywords": [
     "interval",

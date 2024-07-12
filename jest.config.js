@@ -6,4 +6,12 @@ export default {
   },
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      functions: 89,
+      lines: 100,
+      statements: 95,
+    },
+  },
 }

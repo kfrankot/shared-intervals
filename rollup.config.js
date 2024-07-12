@@ -5,7 +5,7 @@ import terser from '@rollup/plugin-terser'
 
 const banner = `
 @preserve
-Kevin Frankot - shared-interval v<%= pkg.version %>
+Kevin Frankot - shared-intervals v<%= pkg.version %>
 `
 
 export default [
