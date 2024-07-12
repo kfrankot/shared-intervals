@@ -1,7 +1,7 @@
 {
   "name": "shared-intervals",
-  "version": "0.0.1",
-  "description": "window.setInterval except duplicate delays share the same interval",
+  "version": "1.0.0-beta.1",
+  "description": "An npm package to share and batch setInterval calls with the same delay",
   "files": [
     "dist/"
   ],
@@ -24,10 +24,20 @@
     "prepublishOnly": "npm run test:coverage"
   },
   "keywords": [
-    "interval",
     "setInterval",
+    "interval",
     "shared",
-    "synchronize"
+    "synchronize",
+    "shared-intervals",
+    "unified-timer",
+    "batch-intervals",
+    "interval-batching",
+    "batch",
+    "timer",
+    "scheduler",
+    "javascript",
+    "timing",
+    "synchronization"
   ],
   "author": "Kevin Frankot",
   "license": "ISC",

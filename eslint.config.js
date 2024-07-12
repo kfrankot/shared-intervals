@@ -62,11 +62,5 @@ export default [
   {
     files: ['**/*.test.js', '**/*.test.ts', '**/*.test.tsx'],
     ...jest.configs['flat/recommended'],
-    // plugins: {
-    //   jest,
-    // },
-    // rules: {
-    //   ...jest.configs.recommended.rules,
-    // },
   },
 ]
