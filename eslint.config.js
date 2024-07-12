@@ -43,7 +43,6 @@ export default [
         'error',
         { argsIgnorePattern: '^_' },
       ],
-      '@typescript-eslint/no-this-alias': ['error', { allowedNames: ['self'] }],
     },
   },
 

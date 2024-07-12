@@ -10,12 +10,9 @@ export class SharedInterval {
     public delay: number,
     public batchFn: BatchFn = (callback) => callback(),
   ) {
-    // TODO: Need to check whether self re-assign is actually necessary, test it
-    // by checking if changes to batchFn and callbacks are reflected
-    const self = this
     this.intervalId = setInterval(() => {
-      self.batchFn(() => {
-        self.callbacks.forEach((callback) => callback())
+      this.batchFn(() => {
+        this.callbacks.forEach((callback) => callback())
       })
     }, this.delay)
   }
