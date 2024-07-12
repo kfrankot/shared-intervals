@@ -40,7 +40,7 @@
     "synchronization"
   ],
   "author": "Kevin Frankot",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.7",
     "@babel/plugin-transform-optional-chaining": "^7.24.7",
