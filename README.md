@@ -25,8 +25,6 @@ yarn add shared-intervals
 
 ## Usage
 
-First, import `share:
-
 ### Setting a Shared Interval
 
 To set a shared interval, you import `setSharedInterval` and call it like a typical call to `setInterval`.
@@ -50,7 +48,7 @@ To clear a shared interval, use `clearSharedInterval` with the unique identifier
 ```typescript
 import { clearSharedInterval } from 'shared-intervals'
 
-// Remove the callback associated with callbackId, but the interval continues running for other callbacks
+// Removes callback for callbackId, interval continues running for other callbacks
 clearSharedInterval(callbackId)
 // Remove last callback, which will clear the interval entirely
 clearSharedInterval(anotherCallbackId)
@@ -85,15 +83,12 @@ intervalManager1.setBatchFunction((executeAll) => {
 const intervalManager2 = new SharedIntervalManager()
 
 const callbackId1 = intervalManager1.setInterval(() => {
-  console.log(
-    'This will only share intervals with other callbacks from intervalManager1',
-  )
+  console.log('Only shares intervals with callbacks from intervalManager1')
 }, 1000)
 const callbackId2 = intervalManager2.setInterval(() => {
-  console.log(
-    'This will only share intervals with other callbacks from intervalManager2',
-  )
+  console.log('Only shares intervals with callbacks from intervalManager2')
 }, 1000)
+
 intervalManager1.clearInterval(callbackId1)
 intervalManager2.clearInterval(callbackId2)
 ```
