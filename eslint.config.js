@@ -13,6 +13,7 @@ const ignores = [
   '**/.d.ts',
   '**/__mocks__/**',
   '**/*.{md,mdx}',
+  '**/scratch/**',
 ]
 
 export default [
