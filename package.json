@@ -39,8 +39,16 @@
     "timing",
     "synchronization"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kfrankot/shared-intervals.git"
+  },
   "author": "Kevin Frankot",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kfrankot/shared-intervals/issues"
+  },
+  "homepage": "https://github.com/kfrankot/shared-intervals#readme",
   "devDependencies": {
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.7",
     "@babel/plugin-transform-optional-chaining": "^7.24.7",
