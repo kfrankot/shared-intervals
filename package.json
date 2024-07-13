@@ -1,6 +1,6 @@
 {
   "name": "shared-intervals",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0",
   "description": "An npm package to share and batch setInterval calls with the same delay",
   "files": [
     "dist/"
