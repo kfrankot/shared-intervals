@@ -1,14 +1,21 @@
 {
   "name": "shared-intervals",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An npm package to share and batch setInterval calls with the same delay",
   "files": [
     "dist/"
   ],
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "test": "jest --runInBand",
     "test:watch": "npm run test -- --watch",
@@ -56,6 +63,8 @@
     "@babel/preset-env": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^7.15.0",
